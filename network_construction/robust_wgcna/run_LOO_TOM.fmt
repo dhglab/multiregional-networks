@@ -1,0 +1,7 @@
+#!/bin/bash
+#$ -l h_data=20G,h_rt=12:00:00
+#$ -wd {} -V
+. /u/local/Modules/default/init/modules.sh
+module load R/3.4.0
+
+Rscript $INTEGRATED_PIPELINE_DIR/LOO_TOM.R {} {} {} $SGE_TASK_ID {}.$SGE_TASK_ID

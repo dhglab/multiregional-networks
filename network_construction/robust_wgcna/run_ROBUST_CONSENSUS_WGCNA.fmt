@@ -1,0 +1,16 @@
+#!/bin/bash
+#$ -l h_data=20G,h_rt=24:00:00
+#$ -wd {} -V
+. /u/local/Modules/default/init/modules.sh
+module load R/3.4.0
+
+Rscript $INTEGRATED_PIPELINE_DIR/ROBUST_CONSENSUS_WGCNA.R {} {} {} {} {} {}
+
+# cleanup
+
+tot=`wc -l {}`
+del=$((tot-15))
+
+# don't cleanup for now...
+#echo $del
+#cat {} | tail -n $del | xargs -i rm {{}}

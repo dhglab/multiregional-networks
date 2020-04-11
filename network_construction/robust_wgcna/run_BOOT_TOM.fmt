@@ -1,0 +1,9 @@
+#!/bin/bash
+#$ -l h_data=12G,h_rt=24:00:00,highp -pe shared 5
+#$ -wd {} -V
+. /u/local/Modules/default/init/modules.sh
+module load R/3.4.0
+
+cmd="Rscript $INTEGRATED_PIPELINE_DIR/BOOT_TOM.R {} {} {} $SGE_TASK_ID {}.$SGE_TASK_ID"
+echo $cmd
+eval $cmd
