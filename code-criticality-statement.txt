@@ -1,0 +1,41 @@
+# Critical Componenets
+
+The critical components of an analysis pipeline we define as those steps that are:
+  + Central to the conclusion
+  + Not validated with concordance with other approaches
+  + Not an existing, already-established software package
+  + Not validated with orthogonal, biological data
+
+Because it represents a novel analytical approach for examining network genetic
+architecture, for which no algorithmic approaches currently exist, and which is
+difficult to validate experimentally, we view our network architecture analysis
+as a critical software component. This includes:
+  + Simulation of the architecture
+  + Various computations of network distance
+  + Curated gene mutational burden scores
+  + Computation of the phi-hat statistic
+
+This critical component, required data, and test data sets appear in the
+omnigenics/ subdirectory.
+
+
+# Non-critical components
+
+We also include non-critical components in this repository to assist
+in reproducibility, or to provide complete detail of our methods. These methods
+are as follows:
+
+ + Robust WGCNA (previously described)
+ + ARACNe-AP    (previously described)
+ + GALSSO       (previously described)
+ + vMF-mix      (validated via concordance)
+ + Learning curves (simple subsampling and application of previously-described method)
+ + Hierarchical network merging (simple variant of hierarchical clustering)
+ + Tensor decomposition clustering (validated via concordance with hierarchically merged networks)
+ + Various module evaluation tools (many previously-described methods, or standalone applications of GLMs
+                                    or GAMs of the form  "in.module ~ some.predictor + covariates")
+ + Cell type decomposition (previously described)
+ + MAGMA gene enrichment   (previously described)
+ + Correlation based cell-specific isoforms (simple ad-hoc analysis, validated with orthogonal sorted-cell sequencing)
+ + lncRNA analysis (previously-described machine learning method [xgboost])
+
